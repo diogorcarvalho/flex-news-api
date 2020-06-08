@@ -46,6 +46,7 @@ namespace FlexNewsApi.Controllers
       }
 
       newPost.Author = _author;
+      newPost.DateCreate = DateTime.UtcNow;
 
       try
       {
@@ -182,6 +183,7 @@ namespace FlexNewsApi.Controllers
           _post.AuthorId = _author.AuthorId;
           _post.Author = _author;
           _postReposritory.Patch(_post);
+
           return Ok(_post);
         }
         catch (Exception ex)
